@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts",
-    "prod": "tsc && node ./dist/server.js"
+    "build": "tsc",
+    "start": "node build/server.js"
   },
   "dependencies": {
     "socket.io": "^2.3.0",
