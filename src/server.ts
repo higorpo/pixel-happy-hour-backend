@@ -5,7 +5,11 @@ import challenges from './challenges';
 import { ServerConnectedPlayer, ServerRoom } from './interfaces';
 import { randomColor, shuffle } from './utils';
 
-const server = http.createServer();
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.write('<h1>Hello World!<h1>');
+    res.end();
+});
 
 const io = socket(server, {
     pingTimeout: 1000,
